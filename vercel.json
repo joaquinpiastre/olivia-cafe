@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["sfo1"],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.oliviapasteleria.com.ar" }],
+      "destination": "https://oliviapasteleria.com.ar/$1",
+      "permanent": true
+    }
+  ]
+}

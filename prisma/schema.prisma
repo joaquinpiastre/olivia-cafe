@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ReservationType {
+  MESA
+  MERIENDA
+  TARDE_DE_TE
+  EVENTO
+}
+
+enum ReservationStatus {
+  PENDIENTE
+  CONFIRMADA
+  CANCELADA
+  ASISTIO
+  NO_VINO
+}
+
+enum ReservationSource {
+  WEB
+  MANUAL
+}
+
+enum InquiryStatus {
+  NUEVA
+  CONTACTADA
+  CERRADA
+}
+
+model AdminUser {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+/// Configuración general (una sola fila, id = 1)
+model Settings {
+  id               Int     @id @default(1)
+  reservationsOpen Boolean @default(true)
+  closedMessage    String  @default("Por el momento no estamos tomando reservas online. Escribinos por WhatsApp.")
+  maxPartySize     Int     @default(12)
+  minAdvanceHours  Int     @default(2)
+  maxAdvanceDays   Int     @default(60)
+  /// 0 = domingo … 6 = sábado
+  openWeekdays     Int[]   @default([1, 2, 3, 4, 5, 6])
+
+  // Textos editables de la página /menu
+  menuEyebrow     String @default("Nuestra carta")
+  menuTitle       String @default("Algo rico para")
+  menuScript      String @default("cada antojo")
+  menuDescription String @default("Dulces, salados, bebidas, promos y opciones Sin TACC. Tocá la carta para ampliarla y leer todos los precios.")
+  menuNote        String @default("Los precios pueden variar. Consultá por WhatsApp ante cualquier duda.")
+}
+
+/// Turnos horarios con su cupo máximo de personas
+model Shift {
+  id           Int           @id @default(autoincrement())
+  /// "09:00"
+  startTime    String        @unique
+  capacity     Int           @default(20)
+  active       Boolean       @default(true)
+  reservations Reservation[]
+}
+
+model BlockedDate {
+  id     Int    @id @default(autoincrement())
+  /// "YYYY-MM-DD"
+  date   String @unique
+  reason String @default("")
+}
+
+model Reservation {
+  id         String            @id @default(cuid())
+  /// Código corto para mostrarle al cliente (ej. "OLV-7K3F")
+  code       String            @unique
+  type       ReservationType
+  /// "YYYY-MM-DD" (hora local de Mendoza)
+  date       String
+  /// "HH:mm" (copia del turno, para que el historial no cambie si se edita el turno)
+  time       String
+  shiftId    Int?
+  shift      Shift?            @relation(fields: [shiftId], references: [id], onDelete: SetNull)
+  partySize  Int
+  name       String
+  phone      String
+  email      String?
+  notes      String?
+  adminNotes String?
+  status     ReservationStatus @default(PENDIENTE)
+  source     ReservationSource @default(WEB)
+  createdAt  DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
+
+  @@index([date, shiftId])
+  @@index([status])
+}
+
+model EventInquiry {
+  id         String        @id @default(cuid())
+  name       String
+  phone      String
+  email      String?
+  eventType  String
+  eventDate  String?
+  guests     Int?
+  message    String
+  status     InquiryStatus @default(NUEVA)
+  adminNotes String?
+  createdAt  DateTime      @default(now())
+}
+
+/// Páginas de la carta (se pueden agregar, ordenar, ocultar y borrar desde el panel).
+/// Las 4 originales usan /public/carta/<slug>.jpg mientras hasImage sea false.
+model MenuPage {
+  slug      String   @id
+  title     String
+  alt       String
+  sortOrder Int
+  visible   Boolean  @default(true)
+  imageData Bytes?
+  hasImage  Boolean  @default(false)
+  /// Se actualiza con cada subida (segundos epoch) y se usa para invalidar la caché del navegador
+  version   Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+/// Contenido editable del sitio desde el panel (menús y precios de Tardes de Té, Candy Bar, datos del local…).
+/// Una fila por sección; si falta, el sitio usa los valores por defecto del código.
+model SiteContent {
+  key       String   @id
+  data      Json
+  updatedAt DateTime @updatedAt
+}

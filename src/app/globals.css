@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream font-sans text-cocoa antialiased;
+  }
+  /* Números "alineados" (el 0 y el 1 no parecen letras) en la tipografía serif */
+  .font-serif, h1, h2, h3, h4 {
+    font-variant-numeric: lining-nums;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif font-medium tracking-tight text-cocoa;
+  }
+  ::selection {
+    @apply bg-rose-200 text-cocoa;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-rose-600;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wide transition duration-300 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-rose text-white shadow-soft hover:-translate-y-0.5 hover:bg-rose-600;
+  }
+  .btn-outline {
+    @apply btn border border-olivia-beige bg-transparent text-olivia-beige hover:bg-olivia-beige hover:text-cocoa;
+  }
+  .btn-light {
+    @apply btn bg-white text-olivia-beige shadow-soft hover:-translate-y-0.5;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.28em] text-olivia-beige;
+  }
+  .script {
+    @apply font-script font-normal text-olivia-green;
+  }
+  .field {
+    @apply w-full rounded-xl border border-cream-300 bg-white px-4 py-3 text-base text-cocoa placeholder:text-cocoa-400 transition focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose-200;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-cocoa-700;
+  }
+  .card {
+    @apply rounded-3xl bg-white p-6 shadow-soft;
+  }
+}
+
+/* Animaciones suaves al scrollear (solo si la persona no pidió reducir movimiento) */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cambio de página de la carta: entra deslizándose y girando apenas, como pasar una hoja */
+@keyframes menuInRight {
+  from { opacity: 0; transform: perspective(1400px) translateX(70px) rotateY(-12deg) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes menuInLeft {
+  from { opacity: 0; transform: perspective(1400px) translateX(-70px) rotateY(12deg) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .menu-in-right { animation: menuInRight 0.55s cubic-bezier(0.22, 0.8, 0.3, 1) both; }
+  .menu-in-left { animation: menuInLeft 0.55s cubic-bezier(0.22, 0.8, 0.3, 1) both; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.wa-pulse { animation: wa-pulse 2.6s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wa-pulse { animation: none; }
+}
+
+/* Solo la primera letra en mayúscula (fechas como "sábado 24 de octubre") */
+.cap1::first-letter { text-transform: uppercase; }
+span.cap1, strong.cap1 { display: inline-block; }
