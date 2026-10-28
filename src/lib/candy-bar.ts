@@ -29,16 +29,6 @@ export const CANDY_COMBOS: CandyCombo[] = [
     photoAlt: 'Candy bar Olivia Mini con arco de globos rosas y blancos, panel con número 1 y una torta sobre posatortas',
   },
   {
-    id: 'chipikids',
-    name: 'Candy Olivia para Chipikids',
-    price: 290000,
-    includes: ['2 a 3 paneles', 'Medio arco de globos', '3 mesas', 'Nombre y número', 'Imágenes temáticas', 'Posatorta y bandejas', 'Torta de 20 porciones', '5 galletas', '5 oreos', '5 yapas', '5 titas'],
-    setupMinutes: 45,
-    space: '2 m × 2 m',
-    photo: '/img/candy/combo-chipikids.jpg',
-    photoAlt: 'Candy bar infantil con paneles de colores, arco de globos, instrumentos musicales y mesa de dulces',
-  },
-  {
     id: 'classic',
     name: 'Candy Olivia Classic',
     price: 495000,

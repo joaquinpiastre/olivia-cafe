@@ -4,7 +4,7 @@ Se muestran en la página **Eventos** (`/eventos#candy-bar`), tomados del catál
 
 ## Cómo cambiar un precio o lo que incluye un combo
 Todo está en **`src/lib/candy-bar.ts`**:
-- `CANDY_COMBOS`: los 4 combos (Mini, Chipikids, Classic, Gold) con precio, qué incluye, tiempo de armado, espacio y foto.
+- `CANDY_COMBOS`: los 3 combos (Mini, Classic, Gold) con precio, qué incluye, tiempo de armado, espacio y foto.
 - `SALTY_TABLES` y `SWEET_TABLES`: mesas saladas y dulces (25-30, 45-50 y 80-85 personas).
 - `COMBO_TERMS`, `TABLE_INCLUDES`, `TABLE_TERMS`: condiciones y seña.
 

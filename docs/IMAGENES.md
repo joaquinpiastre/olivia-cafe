@@ -42,7 +42,7 @@ Las fotos de `public/img/` son **fotos reales de Olivia** (fachada, meriendas, c
 | `eventos-3.jpg` | Eventos → galería | `WhatsApp Image 2026-10-25 at 14.26.51 (1).jpeg` |
 | `eventos-4.jpg` | Eventos → galería | `WhatsApp Image 2026-10-25 at 14.23.56 (9).jpeg` |
 | `reservas-header.jpg` | Reservas → portada | `WhatsApp Image 2026-10-25 at 14.23.56 (18).jpeg` |
-| `candy/combo-mini.jpg`, `combo-chipikids.jpg`, `combo-classic.jpg`, `combo-gold.jpg` | Eventos → combos de Candy Bar (fotos del catálogo) | `assets-originales/catalogo-candy-bar/Candy Bar olivia.pdf` |
+| `candy/combo-mini.jpg`, `combo-classic.jpg`, `combo-gold.jpg` | Eventos → combos de Candy Bar (fotos del catálogo) | `assets-originales/catalogo-candy-bar/Candy Bar olivia.pdf` |
 | `og.jpg` | Imagen al compartir el sitio en redes | (diseño con el logo) |
 
 `meriendas-1.jpg` a `meriendas-5.jpg` y `card-meriendas.jpg` son tablas de tarde de té: ya no se usan en Meriendas libres (queda disponible para Tardes de Té). La portada de Meriendas y la card del inicio usan `meriendas-7.jpg`.
