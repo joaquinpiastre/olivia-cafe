@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import { img } from '@/lib/site';
 
 const SLIDES = [
-  { src: '/img/hero-1.jpg', alt: 'Fachada de Olivia Pastelería y Café, sobre Av. Godoy Cruz, en Mendoza' },
-  { src: '/img/hero-2.jpg', alt: 'Mesa de merienda con café con leche, tostado, jugo de naranja y un postre' },
-  { src: '/img/hero-3.jpg', alt: 'Café con arte latte en una taza de cerámica floral' },
+  { src: '/img/hero-cafe-1.jpg', alt: 'Café con leche con arte latte en una taza de cerámica floral, una porción de carrot cake y jugo de naranja sobre la mesa' },
+  { src: '/img/hero-cafe-2.jpg', alt: 'Mesa con dos cafés con arte latte, sándwich tostado, torta de chocolate, chipás y limonada' },
+  { src: '/img/hero-cafe-3.jpg', alt: 'Porción de torta de chocolate, tiramisú, chipás y café con leche sobre una mesa de madera' },
 ];
 
 export function HeroSlider() {

@@ -12,7 +12,8 @@ Las fotos de `public/img/` son **fotos reales de Olivia** (fachada, meriendas, c
 
 | Archivo | Dónde aparece | Foto original usada |
 |---|---|---|
-| `hero-1.jpg` | Inicio → slider principal (foto 1: fachada) | `WhatsApp Image 2026-10-25 at 14.24.55.jpeg` |
+| `hero-cafe-1.jpg`, `hero-cafe-2.jpg`, `hero-cafe-3.jpg` | Inicio → slider principal (reemplazan a `hero-1/2/3.jpg`, que quedan sin uso en el slider; `hero-1.jpg` sigue en los datos para Google) | `WhatsApp Image 2026-10-28 at 11.09.18.jpeg`, `(1)` y `(3)` |
+| `hero-1.jpg` | (antes) slider principal, foto 1: fachada | `WhatsApp Image 2026-10-25 at 14.24.55.jpeg` |
 | `hero-2.jpg` | Inicio → slider principal (foto 2) | `WhatsApp Image 2026-10-25 at 14.23.56 (22).jpeg` |
 | `hero-3.jpg` | Inicio → slider principal (foto 3) | `WhatsApp Image 2026-10-25 at 14.23.56 (18).jpeg` |
 | `card-menu.jpg` | Inicio → card "Menú" | `WhatsApp Image 2026-10-25 at 14.23.56 (25).jpeg` |
