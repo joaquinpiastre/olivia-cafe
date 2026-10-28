@@ -32,6 +32,7 @@ Las fotos de `public/img/` son **fotos reales de Olivia** (fachada, meriendas, c
 | `meriendas-7.jpg` | Meriendas → galería (foto 7) | `WhatsApp Image 2026-10-25 at 14.53.10.jpeg` |
 | `meriendas-8.jpg` | Meriendas → galería (foto 8) | `WhatsApp Image 2026-10-25 at 14.53.10 (2).jpeg` |
 | `meriendas-9.jpg` | Meriendas → galería (foto 9) | `WhatsApp Image 2026-10-25 at 14.53.09.jpeg` |
+| `meriendas-10.jpg` a `meriendas-14.jpg` | Meriendas → galería (mesa de postres y panecillos) | `WhatsApp Image 2026-10-28 at 11.07.10.jpeg` … `11.07.12 (2).jpeg` |
 | `tardes-te-1.jpg` | Tardes de Té → galería (foto 1) | `WhatsApp Image 2026-10-27 at 22.06.07.jpeg` |
 | `tardes-te-2.jpg` | Tardes de Té → galería (foto 2) | `WhatsApp Image 2026-10-27 at 22.06.07 (2).jpeg` |
 | `tardes-te-3.jpg` | Tardes de Té → galería (foto 3) | `WhatsApp Image 2026-10-27 at 22.06.07 (1).jpeg` |

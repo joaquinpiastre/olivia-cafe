@@ -19,6 +19,11 @@ export default async function MeriendasPage() {
       heroAlt="Mesa de merienda libre con panecillos rellenos, sándwiches de miga y bandejas de bocaditos"
       paragraphs={[m.paragraph]}
       gallery={[
+        { src: '/img/meriendas-10.jpg', alt: 'Mesa de postres de la merienda libre con budín de carrot cake, brownies, vasitos de tiramisú y postres individuales' },
+        { src: '/img/meriendas-11.jpg', alt: 'Mesa de postres con lemon pie, brownies, tartitas con merengue y cupcakes sobre una mesa de madera' },
+        { src: '/img/meriendas-12.jpg', alt: 'Mesa de postres con alfajorcitos de chocolate y nuez, vasitos de tiramisú y facturas' },
+        { src: '/img/meriendas-13.jpg', alt: 'Tiramisú en vasitos sobre un pie de torta, red velvet y medialunas en la mesa de postres' },
+        { src: '/img/meriendas-14.jpg', alt: 'Bandejas de madera con panecillos de sésamo rellenos de jamón y sándwiches de miga' },
         { src: '/img/meriendas-6.jpg', alt: 'Mesa con chipás, sándwiches largos y bandejas de panificados' },
         { src: '/img/meriendas-8.jpg', alt: 'Bandejas con sándwiches alargados, chipás y facturas sobre una mesa de madera' },
         { src: '/img/meriendas-9.jpg', alt: 'Sándwiches de miga de jamón y queso servidos en una bandeja de madera' },
